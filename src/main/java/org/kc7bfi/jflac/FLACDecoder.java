@@ -860,7 +860,7 @@ public class FLACDecoder {
         
         if (type == Metadata.METADATA_TYPE_STREAMINFO) {
         	metadata = new StreamInfo(bitStream, length, isLast);
-        	if (((StreamInfo)metadata).getTotalSamples() > 0) {
+        	if (((StreamInfo)metadata).getTotalSamples() >= 0) {
         		streamInfo = (StreamInfo)metadata;
         		pcmProcessors.processStreamInfo(streamInfo);
         	}
